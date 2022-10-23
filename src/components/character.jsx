@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/style.css";
 
-const character = ({data}) => {
+const Character = ({data}) => {
     return (
         <div className="wrapper">
             {data.map((data) => {
@@ -16,4 +16,4 @@ const character = ({data}) => {
     );
 };
 
-export default character;
+export default Character;

@@ -1,9 +1,11 @@
 .wrapper {
+    display:flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .list {
+    display:flex;
     flex-direction:column;
     align-items: center;
     padding: 1rem 6rem;
@@ -16,12 +18,12 @@
 
 @media (max-width: 1200px) {
     .list {
-        padding: 0 3rem;
+        padding: 0 2rem;
     }
 }
 
 @media (max-width: 1560px) {
     .list {
-        padding: 0 5rem;
+        padding: 0 4rem;
     }
 }

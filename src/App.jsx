@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
-import character from "./components/character";
+import Character from "./components/Character";
 import "./assets/style.css"
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
 
   return(
     <>
-      <character data={data}/>
+      <Character data={data}/>
     </>
   );
 };
