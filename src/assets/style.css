@@ -27,3 +27,47 @@
         padding: 0 4rem;
     }
 }
+
+.btn {
+  height: 40px;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.btn:hover {
+  background-color: blue;
+}
+
+.btn:disabled {
+  background-color: grey;
+}
+
+.nav-button {
+  text-align: center;
+}
+
+.nav-button .btn {
+  margin: 5px;
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.character-grid .character-card {
+  text-align: center;
+}
+
+.character-grid .character-name {
+  text-align: center;
+}
+
+.character-grid .character-card .img-responsive {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
