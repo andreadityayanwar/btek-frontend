@@ -9,6 +9,7 @@ function Register() {
       e.preventDefault();
       navigate('/login');
     } catch (err) {
+      // eslint-disable-next-line no-alert
       window.alert(err.response.data.message);
     }
   };
