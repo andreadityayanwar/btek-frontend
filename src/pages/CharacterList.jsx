@@ -12,7 +12,7 @@ function CharacterCard({ char }) {
       <div className="character-name">{char.name}</div>
     </div>
   );
-} // stateless component
+}
 
 function App() {
   const [data, setData] = React.useState({});
