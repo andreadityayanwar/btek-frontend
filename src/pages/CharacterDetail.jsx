@@ -1,34 +1,49 @@
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import http from '../helpers/http';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import RequireAuth from '../components/RequireAuth';
+import Home from './Home';
+import Login from './Login';
+import Register from './Register';
+import Profile from './Profile';
+import EditProfile from './EditProfile';
+import ForgotPassword from './ForgotPassword';
+import ResetPassword from './ResetPassword';
 
-function CharacterDetail() {
-  const navigate = useNavigate();
-  const { id } = useParams();
-  const [data, setData] = React.useState({});
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RequireAuth><Home /></RequireAuth>,
+  },
+  {
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
+  },
+  {
+    path: '/profile',
+    element: <RequireAuth><Profile /></RequireAuth>,
+  },
+  {
+    path: '/edit-profile',
+    element: <RequireAuth><EditProfile /></RequireAuth>,
+  },
+  {
+    path: '/forgot-password',
+    element: <ForgotPassword />,
+  },
+  {
+    path: '/reset-password',
+    element: <ResetPassword />,
+  },
+]);
 
-  const getCharacterDetail = async () => {
-    const { data: result } = await http().get(`/character/${id}`);
-    setData(result);
-  };
-
-  React.useEffect(() => {
-    getCharacterDetail();
-  }, []);
-
+function App() {
   return (
-    <>
-      {data.name && (
-        <div>
-          <img src={data.image} alt={data.name} />
-          <div>{data.name}</div>
-        </div>
-      )}
-      <div>
-        <button type="button" className="btn" onClick={() => navigate(-1)}>Back</button>
-      </div>
-    </>
+    <RouterProvider router={router} />
   );
 }
 
-export default CharacterDetail;
+export default App;

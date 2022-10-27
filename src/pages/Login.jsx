@@ -1,6 +1,5 @@
-/* eslint-disable no-alert */
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import http from '../helpers/http';
 
 function Login() {
@@ -17,18 +16,26 @@ function Login() {
       window.localStorage.setItem('token', data.results.token);
       navigate('/');
     } catch (err) {
+      // eslint-disable-next-line no-alert
       window.alert(err.response.data.message);
     }
   };
-
   return (
-    <form onSubmit={submitAction}>
-      <input type="email" name="email" />
-      <br />
-      <input type="password" name="password" />
-      <br />
-      <button type="submit">Go Login</button>
-    </form>
+    <>
+      <form onSubmit={submitAction}>
+        <input type="email" name="email" />
+        <br />
+        <input type="password" name="password" />
+        <br />
+        <button type="submit">Login</button>
+      </form>
+      <div>
+        <Link to="/forgot-password">Forgot Password</Link>
+      </div>
+      <div>
+        <Link to="/register">Register</Link>
+      </div>
+    </>
   );
 }
 

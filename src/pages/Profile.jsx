@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import http from '../helpers/http';
 
 function Profile() {
@@ -6,29 +7,31 @@ function Profile() {
   const getProfile = async () => {
     const token = window.localStorage.getItem('token');
     const { data } = await http(token).get('/profile');
-    setUserProfile(data.result);
+    setUserProfile(data.results);
   };
 
   React.useEffect(() => {
     getProfile();
   }, []);
-
   return (
     <div>
       <div>
-        Full Name:
+        Full Name :
         {' '}
         {userProfile?.fullName}
       </div>
       <div>
-        Birthdate:
+        Birth Date :
         {' '}
         {userProfile?.birthDate}
       </div>
       <div>
-        Picture:
+        Picture :
         {' '}
         {userProfile?.picture}
+      </div>
+      <div>
+        <Link to="/edit-profile">Edit Profile</Link>
       </div>
     </div>
   );
