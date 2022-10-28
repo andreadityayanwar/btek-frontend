@@ -1,19 +1,18 @@
-import React from "react";
-import "../assets/style.css";
+// import React from 'react';
+// import '../assets/style.css';
 
-const Character = ({data}) => {
-    return (
-        <div className="wrapper">
-            {data.map((data) => {
-                return (
-                    <div className="list" key={data.id}>
-                        <img src={data.image} alt={data.name}/>
-                        <p>{data.name}</p>
-                    </div>
-                );
-            })}
-        </div>
-    );
-};
+// function Character({ data }) {
+//   return (
+//     <div className="wrapper">
+//       // eslint-disable-next-line no-shadow
+//       {data.map((data) => (
+//         <div className="list" key={data.id}>
+//           <img src={data.image} alt={data.name} />
+//           <p>{data.name}</p>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
 
-export default Character;
+// export default Character;
