@@ -5,6 +5,9 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
     'airbnb',
   ],
   overrides: [
