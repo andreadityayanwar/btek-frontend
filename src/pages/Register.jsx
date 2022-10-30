@@ -2,7 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
-import { YupPassword } from 'yup-password';
+import YupPassword from 'yup-password';
 import * as Yup from 'yup';
 import http from '../helpers/http';
 
