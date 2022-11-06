@@ -15,6 +15,7 @@ function Profile() {
   }, []);
   return (
     <div>
+      {userProfile?.picture && <img style={{ width: '300px', height: '100%' }} src={`http://localhost:8888/assets/uploads/${userProfile?.picture}`} alt={userProfile?.picture} />}
       <div>
         Full Name :
         {' '}

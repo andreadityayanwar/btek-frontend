@@ -13,7 +13,7 @@ function EditProfile() {
   const editProfileSchema = Yup.object().shape({
     fullName: Yup.string().required(),
     birthDate: Yup.string().required(),
-    picture: Yup.mixed().required(),
+    picture: Yup.mixed().nullable(),
   });
 
   const [userProfile, setUserProfile] = React.useState({});
@@ -23,15 +23,16 @@ function EditProfile() {
     setUserProfile(data.results);
   };
 
+  const [file, setFile] = React.useState(null);
   const submitAction = async (values) => {
     const token = window.localStorage.getItem('token');
     const form = new FormData();
     form.append('fullName', values.fullName);
     form.append('birthDate', values.birthDate);
-    form.append('picture', values.picture);
+    form.append('picture', file);
     const { data } = await http(token).put('/profile', form, {
       headers: {
-        'Content-Type': 'multypart/form-data',
+        'Content-Type': 'multipart/form-data',
       },
     });
     setUserProfile(data.results);
@@ -62,13 +63,13 @@ function EditProfile() {
               <div>{errors.fullName}</div>
             ) : null}
             <br />
-            <Field type="file" name="picture" />
+            <input type="file" onChange={(e) => setFile(e.target.files[0])} name="picture" />
             <br />
             {errors.picture && touched.picture ? (
               <div>{errors.picture}</div>
             ) : null}
             <br />
-            <Field type="text" name="birthDate" />
+            <Field type="date" name="birthDate" />
             <br />
             {errors.birthDate && touched.birthDate ? (
               <div>{errors.birthDate}</div>

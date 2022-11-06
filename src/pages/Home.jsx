@@ -10,11 +10,9 @@ function Home() {
   return (
     <div>
       Home &middot;
-      <Link to="/characters">Go to Character List</Link>
-      <br />
       <Link to="/profile">Profile</Link>
       <br />
-      <Link to="/edit-profile">Edit Profile</Link>
+      <Link to="/profile/edit">Edit Profile</Link>
       <br />
       <button type="button" onClick={logout}>Logout</button>
     </div>
