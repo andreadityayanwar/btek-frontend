@@ -23,7 +23,7 @@ function Profile() {
         <div className="hero-content text-center">
           <div className="place-items-center">
             <div className="avatar self-center">
-              <div className=" max-w-lg">
+              <div className=" max-w-full">
                 <div className="flex justify-center items-center">
                   {userProfile?.picture && <img className="mask mask-circle" style={{ width: '50%', height: '80%' }} src={`${userProfile?.picture}`} alt={userProfile?.picture} />}
                 </div>
