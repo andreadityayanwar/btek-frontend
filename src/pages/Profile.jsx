@@ -1,19 +1,22 @@
 /* eslint-disable react/self-closing-comp */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import http from '../helpers/http';
+import { useDispatch, useSelector } from 'react-redux';
+
+import * as profileAction from '../redux/asyncActions/profile';
+import * as profileReducerAction from '../redux/reducers/profile';
 
 function Profile() {
-  const [userProfile, setUserProfile] = React.useState({});
-  const getProfile = async () => {
-    const token = window.localStorage.getItem('token');
-    const { data } = await http(token).get('/profile');
-    setUserProfile(data.results);
-  };
+  const dispatch = useDispatch();
+  const userProfile = useSelector((state) => state.profile.user);
 
   React.useEffect(() => {
-    getProfile();
+    const token = window.localStorage.getItem('token');
+    if (!userProfile?.fullName) {
+      dispatch(profileAction.getDataUser({ token }));
+    }
   }, []);
+
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -38,6 +41,7 @@ function Profile() {
                 <button type="button" className="btn btn-primary mx-1">
                   <Link to="/profile/edit">Edit Profile</Link>
                 </button>
+                <button type="button" className="btn btn-primary mx-1 btn-outline" onClick={() => dispatch(profileReducerAction.resetProfile())}>Reset Data Redux</button>
               </div>
             </div>
           </div>
