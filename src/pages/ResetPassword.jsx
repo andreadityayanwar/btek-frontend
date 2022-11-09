@@ -83,7 +83,7 @@ function ResetPassword() {
                       {errors.confirmPassword && touched.confirmPassword ? (
                         <div className="text-red-400">{errors.confirmPassword}</div>
                       ) : null}
-                      <button className="btn btn-primary block w-full" type="submit">Send</button>
+                      <button className=" mt-5 btn btn-primary block w-full" type="submit">Send</button>
                     </Form>
                   )}
                 </Formik>
