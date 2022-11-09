@@ -22,7 +22,7 @@ function Profile() {
             <div className="avatar self-center">
               <div className="max-w-md">
                 <div className="flex justify-center items-center">
-                  {userProfile?.picture && <img className="mask mask-circle" style={{ width: '250px', height: '100%' }} src={`http://localhost:8888/assets/uploads/${userProfile?.picture}`} alt={userProfile?.picture} />}
+                  {userProfile?.picture && <img className="mask mask-circle" style={{ width: '250px', height: '100%' }} src={`${userProfile?.picture}`} alt={userProfile?.picture} />}
                 </div>
                 <h2 className="py-6">
                   Hello guys, my name is
