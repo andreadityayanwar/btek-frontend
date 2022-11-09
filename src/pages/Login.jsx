@@ -29,7 +29,7 @@ function Login() {
   };
   return (
     <div className="hero min-h-screen bg-base-200">
-      <div className=" px-5  grid grid-cols-6 gap-4">
+      <div className=" px-5 grid grid-cols-6 gap-4">
         <div className="h-screen flex justify-center items-center col-start-2 col-span-4">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
