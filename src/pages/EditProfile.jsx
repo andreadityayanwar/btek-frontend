@@ -53,7 +53,7 @@ function EditProfile() {
               <h1 className="text-xl font-bold text-center">EDIT PROFILE</h1>
               <div className="form-control">
                 <div className="flex justify-center items-center">
-                  {userProfile?.picture && <img className="mask mask-circle" style={{ width: '300px', height: '100%' }} src={`http://localhost:8888/assets/uploads/${userProfile?.picture}`} alt={userProfile?.picture} />}
+                  {userProfile?.picture && <img className="mask mask-circle" style={{ width: '300px', height: '100%' }} src={`${userProfile?.picture}`} alt={userProfile?.picture} />}
                 </div>
                 <Formik
                   initialValues={{
