@@ -25,7 +25,7 @@ function Profile() {
             <div className="avatar self-center">
               <div className="max-w-md">
                 <div className="flex justify-center items-center">
-                  {userProfile?.picture && <img className="rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 self-center" src={`${userProfile?.picture}`} alt={userProfile?.picture} />}
+                  {userProfile?.picture && <img className="mask mask-circle" style={{ width: '50%', height: '80%' }} src={`${userProfile?.picture}`} alt={userProfile?.picture} />}
                 </div>
                 <h2 className="py-6">
                   Hello guys, my name is
